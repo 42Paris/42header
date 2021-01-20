@@ -10,12 +10,22 @@
 
 ### **UNIX Setup**
 
+Copy `stdheader.vim` in your `~/.vim/plugin`, or use your favorite plugin
+manager. Then set the user and mail variables as explained below.
+
+#### Option 1: export USER and MAIL in your shell configuration file
+
 Add in `~/.zshrc` your:
 
 + `USER`
 + `MAIL`
 
-Copy `stdheader.vim` in your `~/.vim/plugin`.
+#### Option 2: set user and mail values directly in your vimrc
+
+```vim
+let g:user42 = 'yourLogin'
+let g:mail42 = 'yourLogin@student.42.fr'
+```
 
 ### **Usage**
 
