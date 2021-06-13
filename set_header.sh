@@ -3,22 +3,28 @@
 
 # Set variables
 
-if [ ! -z "$USER" ]
-then
-    echo "USER=`/usr/bin/whoami`" >> ~/.zshrc
-    echo "export USER" >> ~/.zshrc
+if [[ -n "$INTRAID" ]]; then
+    echo "$INTAID"
+else
+    echo "ENTER 42 INTRA ID : "
+    read INTRAID
+    if [[ -n "$INTRAID" ]]; then
+        echo "export INTRAID=$INTRAID" >> ~/.zshrc
+    else
+        echo "You didn't enter 42 INTRA ID."
+    fi
 fi
 
-if [ ! -z "$GROUP" ]
-then
-    echo "GROUP=`/usr/bin/id -gn $user`" >> ~/.zshrc
-    echo "export GROUP" >> ~/.zshrc
-fi
-
-if [ ! -z "$MAIL" ]
-then
-    echo "MAIL="$USER@student.42.fr"" >> ~/.zshrc
-    echo "export MAIL" >> ~/.zshrc
+if [[ -n "$INTRAMAIL" ]]; then
+    echo "$INTAMAIL"
+else
+    echo "ENTER 42 INTRA MAIL : "
+    read INTRAMAIL
+    if [[ -n "$INTRAMAIL" ]]; then
+        echo "export INTRAMAIL=$INTRAMAIL" >> ~/.zshrc
+    else
+        echo "You didn't enter 42 INTRA MAIL."
+    fi
 fi
 
 mkdir -p ~/.vim/plugin
