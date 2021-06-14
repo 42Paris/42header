@@ -79,7 +79,7 @@ function! s:line(n)
 endfunction
 
 function! s:user()
-	let l:user = $USER
+	let l:user = $INTRAID
 	if strlen(l:user) == 0
 		let l:user = "marvin"
 	endif
@@ -87,7 +87,7 @@ function! s:user()
 endfunction
 
 function! s:mail()
-	let l:mail = $MAIL
+	let l:mail = $INTRAMAIL
 	if strlen(l:mail) == 0
 		let l:mail = "marvin@42.fr"
 	endif
