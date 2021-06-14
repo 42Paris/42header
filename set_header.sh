@@ -3,28 +3,20 @@
 
 # Set variables
 
+echo "ENTER 42 INTRA ID : "
+read INTRAID
 if [[ -n "$INTRAID" ]]; then
-    echo "$INTAID"
+	echo "let g:hdr42user='$INTRAID'" >> ~/.vimrc
 else
-    echo "ENTER 42 INTRA ID : "
-    read INTRAID
-    if [[ -n "$INTRAID" ]]; then
-        echo "export INTRAID=$INTRAID" >> ~/.zshrc
-    else
-        echo "You didn't enter 42 INTRA ID."
-    fi
+    echo "You didn't enter 42 INTRA ID."
 fi
 
+echo "ENTER 42 INTRA MAIL : "
+read INTRAMAIL
 if [[ -n "$INTRAMAIL" ]]; then
-    echo "$INTAMAIL"
+    echo "let g:hdr42mail='$INTRAMAIL'" >> ~/.vimrc
 else
-    echo "ENTER 42 INTRA MAIL : "
-    read INTRAMAIL
-    if [[ -n "$INTRAMAIL" ]]; then
-        echo "export INTRAMAIL=$INTRAMAIL" >> ~/.zshrc
-    else
-        echo "You didn't enter 42 INTRA MAIL."
-    fi
+    echo "You didn't enter 42 INTRA MAIL."
 fi
 
 mkdir -p ~/.vim/plugin
@@ -32,4 +24,9 @@ mkdir -p ~/.vim/plugin
 # Add stdheader to vim plugins
 cp vim/stdheader.vim ~/.vim/plugin/
 
-source ~/.zshrc
+echo "If you didn't enter proper values, correct that inside ~/.vimrc"
+echo "let g:hdr42user='intra user name'"
+echo "let g:hdr42mail='email address which can find out at a intra profile page'"
+echo "Press ENTER to finish"
+
+read

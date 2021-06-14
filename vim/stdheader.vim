@@ -79,7 +79,9 @@ function! s:line(n)
 endfunction
 
 function! s:user()
-	let l:user = $INTRAID
+	if exists('g:hdr42user')
+		let l:user = g:hdr42user
+	endif
 	if strlen(l:user) == 0
 		let l:user = "marvin"
 	endif
@@ -87,7 +89,9 @@ function! s:user()
 endfunction
 
 function! s:mail()
-	let l:mail = $INTRAMAIL
+	if exists('g:hdr42mail')
+		let l:mail = g:hdr42mail
+	endif
 	if strlen(l:mail) == 0
 		let l:mail = "marvin@42.fr"
 	endif
