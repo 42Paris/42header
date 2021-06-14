@@ -10,10 +10,14 @@
 
 ### **UNIX Setup**
 
-Add in `~/.zshrc` your:
+If you use set_./set_header.sh, it will ask some infos and install plugin automatically
 
-+ `USER`
-+ `MAIL`
+Want Manually install?
+
+Add in `~/.vimrc` your:
+
++ `let g:hdr42user='intra user name`
++ `let g:hdr42mail='email address which can find out at a intra profile page'`
 
 Copy `stdheader.vim` in your `~/.vim/plugin`.
 
@@ -25,15 +29,10 @@ Under **Linux** you eventually need to disable the **help** shortcut of your **t
 
 For **Terminator**, right click -> Preferences -> Shortcuts -> change help with something other than <kbd>F1</kbd>
 
-### **Note**
-
-Inside the **42 clusters** you can easily run:
-
-`$ ./set_header.sh`
-
 ### **Credits**
 
-[@zazard](https://github.com/zazard)
+created by [@zazard](https://github.com/zazard)
+edited by [@sungmcho](https://github.com/lordtomi0325)
 
 ### **License**
 

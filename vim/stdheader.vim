@@ -55,7 +55,7 @@ function! s:ascii(n)
 endfunction
 
 function! s:textline(left, right)
-	let l:left = strpart(a:left, 0, s:length - s:margin * 3 - strlen(a:right) + 1)
+	let l:left = strpart(a:left, 0, s:length - s:margin * 2 - strlen(a:right))
 
 	return s:start . repeat(' ', s:margin - strlen(s:start)) . l:left . repeat(' ', s:length - s:margin * 2 - strlen(l:left) - strlen(a:right)) . a:right . repeat(' ', s:margin - strlen(s:end)) . s:end
 endfunction
@@ -79,7 +79,9 @@ function! s:line(n)
 endfunction
 
 function! s:user()
-	let l:user = $USER
+	if exists('g:hdr42user')
+		let l:user = g:hdr42user
+	endif
 	if strlen(l:user) == 0
 		let l:user = "marvin"
 	endif
@@ -87,7 +89,9 @@ function! s:user()
 endfunction
 
 function! s:mail()
-	let l:mail = $MAIL
+	if exists('g:hdr42mail')
+		let l:mail = g:hdr42mail
+	endif
 	if strlen(l:mail) == 0
 		let l:mail = "marvin@42.fr"
 	endif
