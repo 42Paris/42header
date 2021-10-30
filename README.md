@@ -43,8 +43,10 @@ Inside the **42 clusters** you can easily run:
 
 ### **Credits**
 
-created by [@zazard](https://github.com/zazard)
-edited by [@sungmcho](https://github.com/lordtomi0325)
+[@zazard](https://github.com/zazard) - creator  
+[@alexandregv](https://github.com/alexandregv) - contributor  
+[@mjacq42](https://github.com/mjacq42) - contributor  
+[@sungmcho](https://github.com/lordtomi0325) - contributor  
 
 ### **License**
 
