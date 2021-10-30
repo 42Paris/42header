@@ -10,16 +10,22 @@
 
 ### **UNIX Setup**
 
-If you use set_./set_header.sh, it will ask some infos and install plugin automatically
+Copy `stdheader.vim` in your `~/.vim/plugin`, or use your favorite plugin
+manager. Then set the user and mail variables as explained below.
 
-Want Manually install?
+#### Option 1: export USER and MAIL in your shell configuration file
 
-Add in `~/.vimrc` your:
+Add in `~/.zshrc` your:
 
-+ `let g:hdr42user='intra user name`
-+ `let g:hdr42mail='email address which can find out at a intra profile page'`
++ `USER`
++ `MAIL`
 
-Copy `stdheader.vim` in your `~/.vim/plugin`.
+#### Option 2: set user and mail values directly in your vimrc
+
+```vim
+let g:user42 = 'yourLogin'
+let g:mail42 = 'yourLogin@student.42.fr'
+```
 
 ### **Usage**
 
@@ -28,6 +34,12 @@ In **NORMAL** mode you can use `:Stdheader` or simply press the shortcut <kbd>F1
 Under **Linux** you eventually need to disable the **help** shortcut of your **terminal** :
 
 For **Terminator**, right click -> Preferences -> Shortcuts -> change help with something other than <kbd>F1</kbd>
+
+### **Note**
+
+Inside the **42 clusters** you can easily run:
+
+`$ ./set_header.sh`
 
 ### **Credits**
 
