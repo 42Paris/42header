@@ -126,6 +126,9 @@ function! s:insert()
 endfunction
 
 function! s:update()
+	if s:rebasing()
+		return 1
+	endif
 	call s:filetype()
 	if getline(9) =~ s:start . repeat(' ', s:margin - strlen(s:start)) . "Updated: "
 		if &mod
@@ -141,6 +144,13 @@ function! s:stdheader()
 	if s:update()
 		call s:insert()
 	endif
+endfunction
+
+function! s:rebasing()
+	if system("ls `git rev-parse --git-dir 2>/dev/null` | grep rebase | wc -l")
+		return 1
+	endif
+	return 0
 endfunction
 
 " Bind command and shortcut
