@@ -20,6 +20,9 @@ Add in `~/.zshrc` your:
 + `USER`
 + `MAIL`
 
+Note: setting `USER` to something other than the output of `whoami` can
+interfere with some tools (e.g. `brew postinstall`).
+
 #### Option 2: set user and mail values directly in your vimrc
 
 ```vim
