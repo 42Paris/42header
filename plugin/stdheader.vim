@@ -131,9 +131,13 @@ function! s:update()
 	call s:filetype()
 	if getline(9) =~ s:start . repeat(' ', s:margin - strlen(s:start)) . "Updated: "
 		if &mod
-			call setline(9, s:line(9))
+			if s:not_rebasing()
+				call setline(9, s:line(9))
+			endif
 		endif
-		call setline(4, s:line(4))
+		if s:not_rebasing()
+			call setline(4, s:line(4))
+		endif
 		return 0
 	endif
 	return 1
@@ -143,6 +147,13 @@ function! s:stdheader()
 	if s:update()
 		call s:insert()
 	endif
+endfunction
+
+function! s:not_rebasing()
+	if system("ls `git rev-parse --git-dir 2>/dev/null` | grep rebase | wc -l")
+		return 0
+	endif
+	return 1
 endfunction
 
 " Bind command and shortcut
